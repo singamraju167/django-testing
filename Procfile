@@ -1,1 +1,1 @@
-web: gunicorn DTS.wsgi --log-file -
+web:gunicorn DTS.wsgi --log-file -
