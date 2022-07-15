@@ -1,1 +1,0 @@
-web:gunicorn DTS.wsgi --log-file -
