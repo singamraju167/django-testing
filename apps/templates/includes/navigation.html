@@ -7,19 +7,19 @@
             <a class="navbar-brand font-weight-bolder ms-sm-3" href="/" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom">
               Fresher Job updates
             </a>
-            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon mt-2">
                 <span class="navbar-toggler-bar bar1"></span>
                 <span class="navbar-toggler-bar bar2"></span>
                 <span class="navbar-toggler-bar bar3"></span>
               </span>
-            </button>
+            </button> -->
             <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="navigation">
               <ul class="navbar-nav navbar-nav-hover ms-auto">
                 <li class="nav-item dropdown dropdown-hover mx-2">
                   <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="material-icons opacity-6 me-2 text-md">dashboard</i>
-                    Pages
+                    Categories
                     <img src="{{ ASSETS_ROOT }}/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
                   </a>
                   <div class="dropdown-menu dropdown-menu-animation ms-n3 dropdown-md p-3 border-radius-xl mt-0 mt-lg-3" aria-labelledby="dropdownMenuPages">
@@ -28,13 +28,13 @@
                         Landing Pages
                       </h6>
                       <a href="/about-us.html" class="dropdown-item border-radius-md">
-                        <span>About Us</span>
+                        <span>Latest News</span>
                       </a>
                       <a href="/contact-us.html" class="dropdown-item border-radius-md">
-                        <span>Contact Us</span>
+                        <span>Recent Job updates</span>
                       </a>
                       <a href="/author.html" class="dropdown-item border-radius-md">
-                        <span>Author</span>
+                        <span>About US</span>
                       </a>
                       <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
                         Account
@@ -43,7 +43,7 @@
                         <span>Sign In</span>
                       </a>
                     </div>
-                    <div class="d-lg-none">
+                    <!-- <div class="d-lg-none">
                       <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
                         Landing Pages
                       </h6>
@@ -62,10 +62,10 @@
                       <a href="/sign-in.html" class="dropdown-item border-radius-md">
                         <span>Sign In</span>
                       </a>
-                    </div>
+                    </div> -->
                   </div>
                 </li>
-                <li class="nav-item dropdown dropdown-hover mx-2">
+                <!-- <li class="nav-item dropdown dropdown-hover mx-2">
                   <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="material-icons opacity-6 me-2 text-md">view_day</i>
                     Sections
@@ -302,7 +302,7 @@
                       </div>
                     </div>
                   </ul>
-                </li>
+                </li> -->
                 <li class="nav-item dropdown dropdown-hover mx-2">
                   <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="material-icons opacity-6 me-2 text-md">article</i>
@@ -340,15 +340,15 @@
                     </div>
                   </ul>
                 </li>
-                <li class="nav-item ms-lg-auto">
+                <!-- <li class="nav-item ms-lg-auto">
                   <a class="nav-link nav-link-icon me-2" href="https://appseed.us/product/django-material-kit" target="_blank">
                     <i class="fa fa-download me-1"></i>
                     <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Get Sources">Download</p>
                   </a>
-                <!-- </li>
+                </li>
                 <li class="nav-item my-auto ms-3 ms-lg-0">
                   <a href="https://appseed.us/product/django-material-kit2-pro" target="_blank" class="btn btn-sm  bg-gradient-primary  mb-0 me-1 mt-2 mt-md-0">Upgrade to Pro</a>
-                </li> -->
+                </li> 
 
                 {% if request.user.is_authenticated %}
                   <li class="nav-item ms-lg-auto">
@@ -358,7 +358,7 @@
                       <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sign OUT">Logout</p>
                     </a>
                   </li>          
-                {% endif %}
+                {% endif %} -->
 
               </ul>
             </div>
