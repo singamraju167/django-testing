@@ -1,0 +1,9 @@
+{% if postings %}
+    <ul>
+    {% for p in postings %}
+        <li style="background-color: black;"><a href="/home/{{ title }}/">{{ p.j_post }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
