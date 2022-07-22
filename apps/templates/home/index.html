@@ -173,20 +173,30 @@
 
 
 
+
 <div class="blog_container">
   <div class="blog_content">
-      <div class="left_content">
+    <div class="left_content">
+
+        {% for p in postings %}
+    
+        <!-- <li style="background-color: black;"><a href="/home/{{ title }}/">{{ p.title }}</a></li> -->
+   
          <!--CARD BEGINING-->
          <div class="blog_card">
-              <a href="article.html" class="figure">
-                <img src="https://img.freepik.com/free-photo/indian-woman-working-laptop-street-cafe-wearing-stylish-smart-clothes-jacket-glasses_1157-48457.jpg?size=626&ext=jpg&ga=GA1.2.1710758407.1657798058" alt="" loading="lazy">
+              <a href="home/testing" class="figure">
+                <img src= '/media/{{ p.main_img }}' alt="" loading="lazy">
                 <span class="tag" style="background:black">15 JAN</span>
               </a>
               <section>
-                 <a href="#" class="title">Blog title goes here...</a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... </p>
+                <a>{{ p.title }}</a>
+                <p>{{ p.j_post }}</p> 
               </section>
           </div>
+          <br>
+          {% endfor %}
+
+      
           <!--CARD ENDS-->
           <!--CARD BEGINING-->
           <div class="blog_card">
@@ -195,7 +205,7 @@
                 <span class="tag" style="background:black">15 JAN</span>
               </a>
               <section>
-                <a href="article.html" class="title">Blog title goes here...</a>
+                <a href="test.html" class="title">Blog title goes here...</a>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... </p>
               </section>
           </div>
@@ -260,9 +270,15 @@
               </section>
           </div>
           <!--CARD ENDS-->
+          
        </div>
+       
           <button class="btn1 load-btn" style="background:black">Load more</button>
   </div>
+
+  
+
+  
 
       <div class="blog_content right_content">
           <!--SEARCH COLUMN BEGINING-->

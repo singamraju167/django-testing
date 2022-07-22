@@ -3,16 +3,20 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
+from multiprocessing import context
 from django import template
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
+from .models import *
 
 
 # @login_required(login_url="/login/")
 def index(request):
-    context = {'segment': 'index'}
+    postings = Job_postings.objects.order_by('j_id')
+    # template = loader.get_template('home/test.html')
+    context = {'segment': 'index', 'postings': postings}
 
     html_template = loader.get_template('home/index.html')
     return HttpResponse(html_template.render(context, request))
@@ -42,3 +46,16 @@ def index(request):
     # except:
     #     html_template = loader.get_template('home/page-500.html')
     #     return HttpResponse(html_template.render(context, request))
+
+def testing(request):
+    postings = Job_postings.objects.order_by('j_id')
+    template = loader.get_template('home/test.html')
+    context = {
+        'postings': postings
+    }
+    # output = ', '.join([q.title for q in postings])
+    return HttpResponse(template.render(context, request))
+
+# def load(request):
+#     template = loader.get_template('home/test.html')
+#     return HttpResponse(template.render(request))
