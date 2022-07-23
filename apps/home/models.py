@@ -9,14 +9,14 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 
-class Job_postings(models.Model):
-    j_id = models.IntegerField(primary_key=True)
-    main_img = models.ImageField(upload_to='images/', default = " ")
-    title = models.CharField(max_length=30)
-    j_post = models.TextField()
+# class Job_postings(models.Model):
+#     j_id = models.IntegerField(default=" ")
+#     main_img = models.ImageField(upload_to='images/', default = " ")
+#     title = models.CharField(max_length=30)
+#     j_post = models.TextField(default=" ")
     
-    def __str__(self):
-        return self.title
+#     def __str__(self):
+#         return self.title
 
 #Newly added tables
 
@@ -44,6 +44,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255, unique=True)
     subtitle = models.CharField(max_length=255, blank=True)
     slug = models.SlugField(max_length=255, unique=True)
+    main_img = models.ImageField(upload_to='images', default = " ")
     description = RichTextUploadingField(blank=True, null=True, config_name='special', external_plugin_resources=[
         ('youtube', '/static/ckeditor/ckeditor_plugins/youtube/', 'plugin.js',)],)
     meta_description = models.CharField(max_length=150, blank=True)
@@ -55,3 +56,5 @@ class Post(models.Model):
     author = models.ForeignKey(Profile, on_delete=models.PROTECT)
     tags = models.ManyToManyField(Tag, blank=True)
 
+    def __str__(self):
+        return self.title

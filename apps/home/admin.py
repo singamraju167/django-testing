@@ -8,7 +8,7 @@ from django.contrib import admin
 # Register your models here.
 from .models import *
 
-admin.site.register(Job_postings)
+# admin.site.register(Job_postings)
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
