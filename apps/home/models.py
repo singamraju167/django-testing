@@ -10,7 +10,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 
 class Job_postings(models.Model):
-    j_id = models.IntegerField()
+    j_id = models.IntegerField(primary_key=True)
     main_img = models.ImageField(upload_to='images/', default = " ")
     title = models.CharField(max_length=30)
     j_post = models.TextField()
