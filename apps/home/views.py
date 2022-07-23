@@ -14,7 +14,7 @@ from .models import *
 
 # @login_required(login_url="/login/")
 def index(request):
-    postings = Job_postings.objects.order_by('j_id')
+    postings = Post.objects.order_by('publish_date')
     # template = loader.get_template('home/test.html')
     context = {'segment': 'index', 'postings': postings}
 
@@ -23,9 +23,7 @@ def index(request):
 
 def blog(request):
     html_template = loader.get_template('home/blog.html')
-    context = {
-        
-    }
+    context = {}
     return HttpResponse(html_template.render(context, request))
 
 
@@ -55,7 +53,7 @@ def blog(request):
     #     return HttpResponse(html_template.render(context, request))
 
 def testing(request):
-    postings = Job_postings.objects.order_by('j_id')
+    postings = Post.objects.order_by('publish_date')
     template = loader.get_template('home/test.html')
     context = {
         'postings': postings
