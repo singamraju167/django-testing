@@ -42,7 +42,11 @@
     <div class="flex flex-col flex-wrap md:flex-row md:-mx-3">
       <main class="w-full lg:w-3/4 mb-8 lg:mb-0">
         <article class="md:mx-3 bg-gray-900 shadow-lg">
-          <img src="https://img.freepik.com/free-photo/group-people-working-out-business-plan-office_1303-15768.jpg?t=st=1657798079~exp=1657798679~hmac=93e41abbac0ee6ce9180978868eef9d1a4d40943caec4cf2e73566623ffdebb6&w=900" class="w-full">
+          {% if objects %}
+            <img src= '/media/{{ objects.main_img }}' class="w-full">
+          {% else %}
+            <p class = "bg-white">No polls are available.</p>
+          {% endif  %}
           <div class="p-6 bg-white">
             <h1 class="pb-3 font-bold text-4xl md:text-5xl leading-tight">Lorem Ipsum - All the facts</h1>
             <div class="bg-gray-200 mb-6 inline-block py-1 px-2 italic text-sm">Posted on: <time datetime="2021-11-19 20:00">November 19, 2021</time> by <a href="#" class="underline hover:no-underline">Stephen Ainsworth</a></div>

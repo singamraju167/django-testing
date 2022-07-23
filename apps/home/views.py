@@ -11,46 +11,22 @@ from django.template import loader
 from django.urls import reverse
 from .models import *
 
-
-# @login_required(login_url="/login/")
+from django.shortcuts import get_object_or_404, render
 def index(request):
     postings = Post.objects.order_by('publish_date')
-    # template = loader.get_template('home/test.html')
     context = {'segment': 'index', 'postings': postings}
 
     html_template = loader.get_template('home/index.html')
     return HttpResponse(html_template.render(context, request))
 
-def blog(request):
-    html_template = loader.get_template('home/blog.html')
-    context = {}
+def blog(request, slug):
+    objects = Post.objects.get(slug=slug)
+    print(objects.main_img)
+    html_template = loader.get_template('home/slug.html')
+    print("Blog is running!!!")
+    context = {'objects':objects, 'slug': slug}
     return HttpResponse(html_template.render(context, request))
 
-
-# @login_required(login_url="/login/")
-# def pages(request):
-    # context = {}
-    # # All resource paths end in .html.
-    # # Pick out the html file name from the url. And load that template.
-    # try:
-
-    #     load_template = request.path.split('/')[-1]
-
-    #     if load_template == 'admin':
-    #         return HttpResponseRedirect(reverse('admin:index'))
-    #     context['segment'] = load_template
-
-    #     html_template = loader.get_template('home/' + load_template)
-    #     return HttpResponse(html_template.render(context, request))
-
-    # except template.TemplateDoesNotExist:
-
-    #     html_template = loader.get_template('home/page-404.html')
-    #     return HttpResponse(html_template.render(context, request))
-
-    # except:
-    #     html_template = loader.get_template('home/page-500.html')
-    #     return HttpResponse(html_template.render(context, request))
 
 def testing(request):
     postings = Post.objects.order_by('publish_date')
@@ -58,9 +34,14 @@ def testing(request):
     context = {
         'postings': postings
     }
-    # output = ', '.join([q.title for q in postings])
     return HttpResponse(template.render(context, request))
 
-# def load(request):
-#     template = loader.get_template('home/test.html')
-#     return HttpResponse(template.render(request))
+# def loading(request, slug):
+#     objects = Post.objects.get(pk=slug)
+#     print("Its working!!")
+#     template = loader.get_template('home/slug.html')
+#     context = {
+#         'objects': objects,
+#     }
+#     return HttpResponse(template.render(context, request))
+

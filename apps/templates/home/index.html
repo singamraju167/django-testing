@@ -184,13 +184,17 @@
    
          <!--CARD BEGINING-->
          <div class="blog_card">
-              <a href="home/blog" class="figure">
-                <img src= '/media/{{ p.main_img }}' alt="" loading="lazy">
+              <!-- <a href="home/slug.html" class="figure"> -->
+                <a href="/home/{{ p.slug }}/" class = "figure"><img src= '/media/{{ p.main_img }}' alt="" loading="lazy" >
                 <span class="tag" style="background:black">15 JAN</span>
-              </a>
+                </a>
+                <!-- <img src= '/media/{{ p.main_img }}' alt="" loading="lazy" > -->
+                
+              
               <section>
                 <a>{{ p.title }}</a>
                 <p>{{ p.meta_description | safe }}</p> 
+                <p>{{ p.slug }}</p>
               </section>
           </div>
           <br>
