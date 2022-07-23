@@ -1,8 +1,3 @@
-# -*- encoding: utf-8 -*-
-"""
-Copyright (c) 2019 - present AppSeed.us
-"""
-
 from multiprocessing import context
 from django import template
 from django.contrib.auth.decorators import login_required
@@ -14,8 +9,9 @@ from .models import *
 from django.shortcuts import get_object_or_404, render
 def index(request):
     postings = Post.objects.order_by('publish_date')
-    context = {'segment': 'index', 'postings': postings}
-
+    context = {'segment': 'index', 
+                'postings': postings
+              }
     html_template = loader.get_template('home/index.html')
     return HttpResponse(html_template.render(context, request))
 
@@ -35,13 +31,4 @@ def testing(request):
         'postings': postings
     }
     return HttpResponse(template.render(context, request))
-
-# def loading(request, slug):
-#     objects = Post.objects.get(pk=slug)
-#     print("Its working!!")
-#     template = loader.get_template('home/slug.html')
-#     context = {
-#         'objects': objects,
-#     }
-#     return HttpResponse(template.render(context, request))
 
